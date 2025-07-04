@@ -89,9 +89,13 @@ jobs:
         
     - name: Prepare the environment
       run: |
+        curl -O http://launchpadlibrarian.net/648013231/libtinfo5_6.4-2_amd64.deb && sudo dpkg -i libtinfo5_6.4-2_amd64.deb
+        curl -O http://launchpadlibrarian.net/648013227/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb
+        curl -O http://launchpadlibrarian.net/646633572/libaio1_0.3.113-4_amd64.deb && sudo dpkg -i libaio1_0.3.113-4_amd64.deb
+        sudo apt -y install libnss3-tools
         sudo apt update
         sudo apt -y upgrade
-        sudo apt -y install gperf gcc-multilib gcc-10-multilib g++-multilib g++-10-multilib lib32ncurses5-dev x11proto-core-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc bc ccache lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-gtk3-dev lzop pngcrush schedtool squashfs-tools imagemagick libbz2-dev lzma ncftp qemu-user-static libstdc++-10-dev libtinfo5 libgflags-dev
+        sudo apt -y install gperf gcc-multilib gcc-10-multilib g++-multilib g++-10-multilib x11proto-core-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc bc ccache lib32readline-dev lib32z1-dev liblz4-tool libsdl1.2-dev  lzop pngcrush schedtool squashfs-tools imagemagick libbz2-dev lzma ncftp qemu-user-static libstdc++-10-dev libgflags-dev
         sudo add-apt-repository universe
         sudo apt -y install libncurses5
 
